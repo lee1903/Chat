@@ -47,6 +47,7 @@ class ViewController: UIViewController {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 // Do stuff after successful login.
+                self.performSegueWithIdentifier("LoginSegue", sender: sender)
             } else {
                 // The login failed. Check error to see why.
             }
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
         let user = PFUser()
         user.username = usernameLabel.text!
         user.password = passwordLabel.text!
-        user.email = "12323232@gmail.com"
+        user.email = "lainiebrainie@gmail.com"
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
